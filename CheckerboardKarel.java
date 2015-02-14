@@ -44,18 +44,23 @@ public class CheckerboardKarel extends SuperKarel {
 	}	
 	
 	private void moveUpFromRight() {
-		while (!frontIsClear()) {
+		while ( !frontIsClear() ) {
 			turnLeft();
-			move();
-			turnLeft();
+			if(frontIsClear()){
+				move();
+				turnLeft();
+
+			}			
 		}		
 	}	
 	
 	private void moveUpFromLeft() {
-		while (!frontIsClear()) {
+		while (! frontIsClear() ) {
 			turnRight();
-			move();
-			turnRight();
+			if(frontIsClear()){
+				move();
+				turnRight();
+			}	
 		}		
 	}		
 
