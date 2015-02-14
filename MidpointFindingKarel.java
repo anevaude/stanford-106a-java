@@ -10,10 +10,40 @@
  * assume that it is at least as tall as it is wide.
  */
 
+/*
+ * ALGORITHM
+ * -------------------------------
+ * put down beeper for each step til Karel hits a wall
+ * turn around
+ * take total beepers dropped and divide by two
+ * store this answer
+ * move this many spaces back, picking up beepers along the way
+ * drop a beeper there
+ */
+
 import stanford.karel.*;
 
 public class MidpointFindingKarel extends SuperKarel {
 
-	// You fill in this part
-
+	public void run() {
+		int i = 1;
+		int stepsToMiddle = 0;
+		
+		while(frontIsClear()){
+			move();
+			i++;
+		}
+		
+		turnAround();
+		
+		stepsToMiddle = i / 2;
+		
+		for (int j = 0; j < stepsToMiddle; j++) {
+			move();
+		}
+		
+		putBeeper();
+		
+	}
+	
 }
