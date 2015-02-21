@@ -25,15 +25,23 @@ public class Pyramid extends GraphicsProgram {
 /** Number of bricks in the base of the pyramid */
 	private static final int BRICKS_IN_BASE = 14;
 	
-	public void run() {
-
-		double posCenterX = ( getWidth() ) / 2;		
-		double posBottomY = ( getHeight() ) - (BRICK_HEIGHT + 1);
+	public void run() {	
 		
-		GRect Brick = new GRect(posCenterX, posBottomY, BRICK_WIDTH, BRICK_HEIGHT);
+		/* Set Bricks */
+		for (int i = 0; i < 100; i++) {
+			
+			/* Measurements */
+			int posCenterX = ( getWidth() ) / 2;		
+			int posBottomY = ( getHeight() ) - (BRICK_HEIGHT + 1);
+			int halfWidth = BRICK_WIDTH / 2;
+			int halfHeight = BRICK_HEIGHT / 2;			
+			
+			int x = posCenterX - 30;
+			int y = posBottomY - 30;
 		
-		for (int i = 0; i < BRICKS_IN_BASE; i++) {
-			add (Brick);
+			GRect Brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+			add(Brick);				
+		
 		}
 	}
 }
