@@ -36,9 +36,9 @@ public class Pyramid extends GraphicsProgram {
 			int halfWidth = BRICK_WIDTH / 2;
 			int halfHeight = BRICK_HEIGHT / 2;			
 			
-			int x = posCenterX - 30;
-			int y = posBottomY - 30;
-		
+			int x = posCenterX - halfWidth - (BRICK_WIDTH * i);
+			int y = posBottomY - halfHeight - (BRICK_HEIGHT * i);
+					
 			GRect Brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
 			add(Brick);				
 		
