@@ -8,11 +8,63 @@
 
 import acm.graphics.*;
 import acm.program.*;
+
 import java.awt.*;
 
 public class ProgramHierarchy extends GraphicsProgram {	
+	
+	private static final int RECT_WIDTH = 120;
+	private static final int RECT_HEIGHT = 60;
+	private static final int MAX_RECT = 3;	
+	
 	public void run() {
-		/* You fill this in. */
+		
+		makeBoxProgram();		
+		makeBoxGraphics();
+		makeBoxConsole();
+		makeBoxDialog();
+		
+		/*
+		makeBoxDialog();
+		makeBoxGraphics();
+		makeLineGraphics();
+		makeLineConsole();
+		makeLineDialog();	
+		*/
+		
 	}
+	
+	public void makeBoxProgram(){
+		double boxPosX = (getWidth() / 2) - (RECT_WIDTH / 2);
+		double boxPosY = ( (getHeight() / 2) - (RECT_HEIGHT / 2) ) / 2;
+		GRect boxProgram = new GRect(boxPosX, boxPosY, RECT_WIDTH, RECT_HEIGHT);
+		add(boxProgram);
+	}
+	
+	public void makeBoxGraphics(){
+		double boxPosX = (getWidth() / 2) - (RECT_WIDTH * 2);
+		double boxPosY = ( getHeight() / 2 ) + (RECT_HEIGHT);
+		GRect boxGraphics = new GRect(boxPosX, boxPosY, RECT_WIDTH, RECT_HEIGHT);
+		boxGraphics.setColor(Color.RED);		
+		add(boxGraphics);
+	}	
+	
+	public void makeBoxConsole(){
+		double boxPosX = (getWidth() / 2) - (RECT_WIDTH / 2);
+		double boxPosY = ( getHeight() / 2 ) + (RECT_HEIGHT);
+		GRect boxConsole = new GRect(boxPosX, boxPosY, RECT_WIDTH, RECT_HEIGHT);
+		boxConsole.setColor(Color.GREEN);		
+		add(boxConsole);
+	}	
+	
+	public void makeBoxDialog(){
+		double boxPosX = (getWidth() / 2) + (RECT_WIDTH);
+		double boxPosY = ( getHeight() / 2 ) + (RECT_HEIGHT);
+		GRect boxDialog = new GRect(boxPosX, boxPosY, RECT_WIDTH, RECT_HEIGHT);
+		boxDialog.setColor(Color.BLUE);		
+		add(boxDialog);
+	}	
+	
+	
 }
 
