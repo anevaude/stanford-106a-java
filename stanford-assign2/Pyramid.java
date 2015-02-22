@@ -37,17 +37,13 @@ public class Pyramid extends GraphicsProgram {
 			for (int j = 0; j < bricksPerRow; j++) {
 				
 				/* Measurements */
-				int posCenterX = ( getWidth() / 2 );		
-				int posBottomY = getHeight() - BRICK_HEIGHT * (j + 1) ;
-				int halfWidth = BRICK_WIDTH / 2;
-				int halfHeight = BRICK_HEIGHT / 2;		
-
+				int posCenterX = getWidth() / 2;							
 				
-				// Find Horizontal Pos
-				int x = posCenterX - ( BRICK_WIDTH * bricksPerRow )  + (BRICK_WIDTH * j);
+				// Find Horizontal Pos				
+				int x = posCenterX - (BRICK_WIDTH * bricksPerRow) / 2 + (j * BRICK_WIDTH);
 									
 				// Find Vertical Pos
-				int y = posBottomY;
+				int y = getHeight() - BRICK_HEIGHT * (i + 1);
 				
 				System.out.println(x);
 						
