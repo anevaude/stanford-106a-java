@@ -28,20 +28,32 @@ public class Pyramid extends GraphicsProgram {
 	public void run() {	
 		
 		/* Set Bricks */
-		for (int i = 0; i < 100; i++) {
+		/* For until we meet BRICKS_IN_BASE goal, loop through this */
+		for (int i = 0; i < BRICKS_IN_BASE; i++) {
 			
-			/* Measurements */
-			int posCenterX = ( getWidth() ) / 2;		
-			int posBottomY = ( getHeight() ) - (BRICK_HEIGHT + 1);
-			int halfWidth = BRICK_WIDTH / 2;
-			int halfHeight = BRICK_HEIGHT / 2;			
+			// For each row, subtract X bricks
+			int bricksPerRow = BRICKS_IN_BASE - i;	
 			
-			int x = posCenterX - halfWidth - (BRICK_WIDTH * i);
-			int y = posBottomY - halfHeight - (BRICK_HEIGHT * i);
-					
-			GRect Brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-			add(Brick);				
-		
+			for (int j = 0; j < bricksPerRow; j++) {
+				
+				/* Measurements */
+				int posCenterX = ( getWidth() / 2 );		
+				int posBottomY = getHeight() - BRICK_HEIGHT * (j + 1) ;
+				int halfWidth = BRICK_WIDTH / 2;
+				int halfHeight = BRICK_HEIGHT / 2;		
+
+				
+				// Find Horizontal Pos
+				int x = posCenterX - ( BRICK_WIDTH * bricksPerRow )  + (BRICK_WIDTH * j);
+									
+				// Find Vertical Pos
+				int y = posBottomY;
+				
+				System.out.println(x);
+						
+				GRect Brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+				add(Brick);					
+			}
 		}
 	}
 }
