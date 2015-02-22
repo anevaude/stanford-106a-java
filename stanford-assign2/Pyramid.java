@@ -25,7 +25,11 @@ public class Pyramid extends GraphicsProgram {
 /** Number of bricks in the base of the pyramid */
 	private static final int BRICKS_IN_BASE = 14;
 	
-	public void run() {	
+	public void run() {
+		buildPyramid();
+	}
+	
+	public void buildPyramid() {
 		
 		/* Set Bricks */
 		/* For until we meet BRICKS_IN_BASE goal, loop through this */
