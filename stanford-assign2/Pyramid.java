@@ -38,13 +38,10 @@ public class Pyramid extends GraphicsProgram {
 			// For each row, subtract a brick
 			int bricksPerRow = BRICKS_IN_BASE - i;	
 			
-			for (int j = 0; j < bricksPerRow; j++) {
-				
-				/* Measurements */
-				int posCenterX = getWidth() / 2;							
+			for (int j = 0; j < bricksPerRow; j++) {							
 				
 				// Find Horizontal Pos				
-				int x = posCenterX - (BRICK_WIDTH * bricksPerRow) / 2 + (j * BRICK_WIDTH);
+				int x = (getWidth() / 2) - (BRICK_WIDTH * bricksPerRow) / 2 + (j * BRICK_WIDTH);
 									
 				// Find Vertical Pos
 				int y = getHeight() - BRICK_HEIGHT * (i + 1);
