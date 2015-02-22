@@ -22,7 +22,6 @@ public class Target extends GraphicsProgram {
 		int x = (getWidth() / 2);
 		int y = (getHeight() / 2);
 		
-		
 		// Prep Circles
 		GOval circleRedA = new GOval(x, y, 72, 72);
 		GOval circleWhiteB = new GOval(x, y, 48, 48);		
@@ -36,7 +35,6 @@ public class Target extends GraphicsProgram {
 		
 		circleRedC.setFilled(true);
 		circleRedC.setColor(Color.RED);
-		
 		
 		// Post Circles
 		add(circleRedA);
