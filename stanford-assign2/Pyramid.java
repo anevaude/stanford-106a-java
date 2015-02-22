@@ -31,7 +31,7 @@ public class Pyramid extends GraphicsProgram {
 		/* For until we meet BRICKS_IN_BASE goal, loop through this */
 		for (int i = 0; i < BRICKS_IN_BASE; i++) {
 			
-			// For each row, subtract X bricks
+			// For each row, subtract a brick
 			int bricksPerRow = BRICKS_IN_BASE - i;	
 			
 			for (int j = 0; j < bricksPerRow; j++) {
@@ -46,7 +46,8 @@ public class Pyramid extends GraphicsProgram {
 				int y = getHeight() - BRICK_HEIGHT * (i + 1);
 				
 				System.out.println(x);
-						
+					
+				// Create and Post Brick
 				GRect Brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
 				add(Brick);					
 			}
