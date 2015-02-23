@@ -33,6 +33,8 @@ public class ProgramHierarchy extends GraphicsProgram {
 		double boxPosY = getHeight() / 2 - (RECT_HEIGHT * 2);
 		GRect boxProgram = new GRect(boxPosX, boxPosY, RECT_WIDTH, RECT_HEIGHT);
 		add(boxProgram);
+		GLabel boxLabel = new GLabel("Program", boxPosX, boxPosY);
+		add(boxLabel);
 	}
 	
 	public void makeBoxGraphics(){
