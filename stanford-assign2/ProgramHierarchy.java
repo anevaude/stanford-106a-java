@@ -18,25 +18,19 @@ public class ProgramHierarchy extends GraphicsProgram {
 	private static final int MAX_RECT = 3;	
 	
 	public void run() {
-		
 		makeBoxProgram();		
 		makeBoxGraphics();
 		makeBoxConsole();
 		makeBoxDialog();
 		
-		/*
-		makeBoxDialog();
-		makeBoxGraphics();
 		makeLineGraphics();
 		makeLineConsole();
-		makeLineDialog();	
-		*/
-		
+		makeLineDialog();
 	}
 	
 	public void makeBoxProgram(){
-		double boxPosX = (getWidth() / 2) - (RECT_WIDTH / 2);
-		double boxPosY = ( (getHeight() / 2) - (RECT_HEIGHT / 2) ) / 2;
+		double boxPosX = getWidth() / 2 - (RECT_WIDTH / 2);
+		double boxPosY = getHeight() / 2 - (RECT_HEIGHT * 2);
 		GRect boxProgram = new GRect(boxPosX, boxPosY, RECT_WIDTH, RECT_HEIGHT);
 		add(boxProgram);
 	}
@@ -65,6 +59,32 @@ public class ProgramHierarchy extends GraphicsProgram {
 		add(boxDialog);
 	}	
 	
+	public void makeLineGraphics() {
+		double x1 = (getWidth() / 2) - (RECT_WIDTH * 2) + (RECT_WIDTH / 2);
+		double y1 = ( getHeight() / 2 ) + (RECT_HEIGHT);
+		double x2 = (getWidth() / 2);
+		double y2 = getHeight() / 2 - RECT_HEIGHT;
+		GLine lineGraphics = new GLine (x1, y1, x2, y2);
+		add(lineGraphics);
+	}
+	
+	public void makeLineConsole() {
+		double x1 = (getWidth() / 2);
+		double y1 = (getHeight() / 2) + RECT_HEIGHT;
+		double x2 = (getWidth() / 2);
+		double y2 = (getHeight() / 2) - RECT_HEIGHT;
+		GLine lineGraphics = new GLine (x1, y1, x2, y2);
+		add(lineGraphics);
+	}
+	
+	public void makeLineDialog() {
+		double x1 = (getWidth() / 2) + (RECT_WIDTH * 2) - (RECT_WIDTH / 2); 
+		double y1 = ( getHeight() / 2 ) + (RECT_HEIGHT);
+		double x2 = (getWidth() / 2);
+		double y2 = getHeight() / 2 - RECT_HEIGHT;
+		GLine lineDialog = new GLine (x1, y1, x2, y2);
+		add(lineDialog);
+	}	
 	
 }
 
